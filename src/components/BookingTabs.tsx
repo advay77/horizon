@@ -14,72 +14,73 @@ const BookingTabs = () => {
     { id: "hotels", label: "Hotels", icon: "🏨" },
     { id: "cabs", label: "Cabs", icon: "🚗" },
     { id: "activities", label: "Activities", icon: "🏔️" },
-    { id: "trains", label: "Trains", icon: "🚂" },
     { id: "buses", label: "Buses", icon: "🚌" },
     { id: "flights", label: "Flights", icon: "✈️" },
     { id: "cruise", label: "Cruise", icon: "🛳️" },
   ];
 
   return (
-    <div className="absolute bottom-8 left-4 right-4 md:left-8 md:right-8 lg:left-16 lg:right-16 z-20">
-      <div className="bg-card/95 backdrop-blur-md rounded-2xl border border-glass-border p-6 shadow-2xl">
-        <Tabs defaultValue="packages" className="w-full">
+    <div className="w-full">
+      <Tabs defaultValue="packages" className="w-full">
+        <div className="px-4">
           {/* Booking Type Tabs */}
-          <TabsList className="grid grid-cols-4 md:grid-cols-8 gap-1 bg-transparent h-auto p-0 mb-6">
+          <TabsList className="grid grid-cols-4 md:grid-cols-8 gap-2 bg-transparent h-auto p-0 mb-6 overflow-x-auto">
             {bookingTypes.map((type) => (
               <TabsTrigger
                 key={type.id}
                 value={type.id}
-                className="flex flex-col items-center gap-1 p-3 text-xs bg-secondary/20 hover:bg-secondary/40 data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground rounded-lg border-0"
+                className="flex flex-col items-center justify-center gap-1 h-20 w-full px-2 py-3 rounded-lg border border-border/20 data-[state=active]:bg-accent/20 data-[state=active]:text-foreground hover:bg-accent/10 transition-colors"
               >
-                <span className="text-lg">{type.icon}</span>
-                <span className="hidden sm:block">{type.label}</span>
+                <span className="text-2xl h-8 flex items-center">{type.icon}</span>
+                <span className="text-xs font-medium text-center leading-tight">{type.label}</span>
               </TabsTrigger>
             ))}
           </TabsList>
 
           {/* Booking Forms */}
-          <TabsContent value="packages" className="space-y-4">
-            <PackageBookingForm />
-          </TabsContent>
-          
-          <TabsContent value="hotels" className="space-y-4">
-            <HotelBookingForm />
-          </TabsContent>
-
-          <TabsContent value="flights" className="space-y-4">
-            <FlightBookingForm />
-          </TabsContent>
-
-          {/* Add similar content for other tabs */}
-          {bookingTypes.slice(2, -1).map((type) => (
-            <TabsContent key={type.id} value={type.id} className="space-y-4">
-              <div className="text-center py-8">
-                <span className="text-4xl mb-4 block">{type.icon}</span>
-                <h3 className="text-xl font-semibold text-card-foreground">{type.label} Booking</h3>
-                <p className="text-muted-foreground mt-2">Coming Soon</p>
-              </div>
+          <div className="space-y-6">
+            <TabsContent value="packages" className="space-y-4">
+              <PackageBookingForm />
             </TabsContent>
-          ))}
-        </Tabs>
+            
+            <TabsContent value="hotels" className="space-y-4">
+              <HotelBookingForm />
+            </TabsContent>
 
-        {/* Add Flight Option */}
-        {!isFlightAdded && (
-          <div className="mt-4 pt-4 border-t border-glass-border">
-            <Button
-              variant="ghost"
-              onClick={() => setIsFlightAdded(true)}
-              className="text-card-foreground hover:bg-accent/10"
-            >
-              <Plus className="w-4 h-4 mr-2" />
-              Add a flight
-            </Button>
+            <TabsContent value="flights" className="space-y-4">
+              <FlightBookingForm />
+            </TabsContent>
+
+            {/* Add similar content for other tabs */}
+            {bookingTypes.slice(2, -1).map((type) => (
+              <TabsContent key={type.id} value={type.id} className="space-y-4">
+                <div className="text-center py-8">
+                  <span className="text-4xl mb-4 block">{type.icon}</span>
+                  <h3 className="text-xl font-semibold text-card-foreground">{type.label} Booking</h3>
+                  <p className="text-muted-foreground mt-2">Coming Soon</p>
+                </div>
+              </TabsContent>
+            ))}
           </div>
-        )}
-      </div>
+
+          {/* Add Flight Option */}
+          {!isFlightAdded && (
+            <div className="mt-6 pt-4 border-t border-border/20">
+              <Button
+                variant="ghost"
+                onClick={() => setIsFlightAdded(true)}
+                className="text-foreground hover:bg-accent/10"
+              >
+                <Plus className="w-4 h-4 mr-2" />
+                Add a flight
+              </Button>
+            </div>
+          )}
+        </div>
+      </Tabs>
     </div>
   );
-};
+}
 
 const PackageBookingForm = () => {
   return (
