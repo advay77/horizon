@@ -3,6 +3,9 @@ import HeroSection from "@/components/HeroSection";
 import BookingTabs from "@/components/BookingTabs";
 import ExclusiveDeals from "@/components/ExclusiveDeals";
 import HowItWorks from "@/components/HowItWorks";
+import ExperienceExtraordinary from "@/components/ExperienceExtraordinary";
+import EarlyBirdOffers from "@/components/EarlyBirdOffers";
+import CustomizeBooking from "@/components/CustomizeBooking";
 
 const Index = () => {
   return (
@@ -12,6 +15,9 @@ const Index = () => {
       <BookingTabs />
       <ExclusiveDeals />
       <HowItWorks />
+      <ExperienceExtraordinary />
+      <EarlyBirdOffers />
+      <CustomizeBooking />
     </div>
   );
 };
