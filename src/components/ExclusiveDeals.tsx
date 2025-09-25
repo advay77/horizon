@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Badge, BadgeProps } from "@/components/ui/badge";
 import { Calendar, MapPin, Users, Plane } from "lucide-react";
 
 const dealCategories = [
@@ -80,7 +80,7 @@ const ExclusiveDeals = () => {
         {/* Deals Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {dealsData.map((deal) => (
-            <Card key={deal.id} className="overflow-hidden group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <Card key={deal.id} className="flex flex-col h-full overflow-hidden group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="relative">
                 <img 
                   src={deal.image} 
@@ -102,70 +102,76 @@ const ExclusiveDeals = () => {
                 </div>
               </div>
 
-              <CardContent className="p-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold mb-1">{deal.title}</h3>
-                    <p className="text-gray-300 text-sm flex items-center gap-1">
-                      <MapPin className="w-4 h-4" />
-                      {deal.location}
-                    </p>
-                  </div>
-                  {deal.type === "Package" && (
-                    <div className="flex gap-1">
-                      <Users className="w-4 h-4 text-orange-400" />
-                      <Plane className="w-4 h-4 text-orange-400" />
+              <CardContent className="flex-1 flex flex-col p-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+                <div className="flex flex-col h-full">
+                  <div className="flex-1">
+                    <div className="flex justify-between items-start mb-4">
+                      <div>
+                        <h3 className="text-xl font-bold mb-1">{deal.title}</h3>
+                        <p className="text-gray-300 text-sm flex items-center gap-1">
+                          <MapPin className="w-4 h-4" />
+                          {deal.location}
+                        </p>
+                      </div>
+                      {deal.type === "Package" && (
+                        <div className="flex gap-1">
+                          <Users className="w-4 h-4 text-orange-400" />
+                          <Plane className="w-4 h-4 text-orange-400" />
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
 
-                {/* Package Details */}
-                {deal.details && (
-                  <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
-                    <div className="flex items-center gap-1">
-                      <div className="w-4 h-4 bg-orange-500 rounded flex items-center justify-center">
-                        <Plane className="w-2 h-2 text-white" />
+                    {/* Package Details */}
+                    {deal.details && (
+                      <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
+                        <div className="flex items-center gap-1">
+                          <div className="w-4 h-4 bg-orange-500 rounded flex items-center justify-center">
+                            <Plane className="w-2 h-2 text-white" />
+                          </div>
+                          {deal.details.nights}
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <div className="w-4 h-4 bg-orange-500 rounded flex items-center justify-center">
+                            <div className="w-2 h-2 bg-white rounded"></div>
+                          </div>
+                          {deal.details.hotels}
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <div className="w-4 h-4 bg-orange-500 rounded flex items-center justify-center">
+                            <Users className="w-2 h-2 text-white" />
+                          </div>
+                          {deal.details.activities}
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <div className="w-4 h-4 bg-orange-500 rounded flex items-center justify-center">
+                            <div className="w-2 h-2 bg-white rounded"></div>
+                          </div>
+                          {deal.details.transfers}
+                        </div>
                       </div>
-                      {deal.details.nights}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <div className="w-4 h-4 bg-orange-500 rounded flex items-center justify-center">
-                        <div className="w-2 h-2 bg-white rounded"></div>
-                      </div>
-                      {deal.details.hotels}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <div className="w-4 h-4 bg-orange-500 rounded flex items-center justify-center">
-                        <Users className="w-2 h-2 text-white" />
-                      </div>
-                      {deal.details.activities}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <div className="w-4 h-4 bg-orange-500 rounded flex items-center justify-center">
-                        <div className="w-2 h-2 bg-white rounded"></div>
-                      </div>
-                      {deal.details.transfers}
-                    </div>
+                    )}
                   </div>
-                )}
 
-                {/* Date for Cruise */}
-                {deal.date && (
-                  <div className="flex items-center gap-1 mb-4 text-sm">
-                    <Calendar className="w-4 h-4 text-orange-400" />
-                    {deal.date}
-                  </div>
-                )}
+                  <div className="mt-auto">
+                    {/* Date for Cruise */}
+                    {deal.date && (
+                      <div className="flex items-center gap-1 mb-4 text-sm">
+                        <Calendar className="w-4 h-4 text-orange-400" />
+                        {deal.date}
+                      </div>
+                    )}
 
-                {/* Price */}
-                <div className="flex items-end justify-between">
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-2xl font-bold text-orange-400">₹ {deal.price}</span>
-                      <span className="text-sm text-gray-400 line-through">₹ {deal.originalPrice}</span>
-                      <span className="text-xs text-gray-300">Per Person</span>
+                    {/* Price */}
+                    <div className="flex items-end justify-between">
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="text-2xl font-bold text-orange-400">₹ {deal.price}</span>
+                          <span className="text-sm text-gray-400 line-through">₹ {deal.originalPrice}</span>
+                          <span className="text-xs text-gray-300">Per Person</span>
+                        </div>
+                        <p className="text-xs text-gray-400">{deal.includes}</p>
+                      </div>
                     </div>
-                    <p className="text-xs text-gray-400">{deal.includes}</p>
                   </div>
                 </div>
               </CardContent>

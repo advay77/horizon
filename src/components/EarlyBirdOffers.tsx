@@ -11,7 +11,7 @@ const earlyBirdOffers = [
     duration: "6N/7D",
     price: "5,999",
     originalPrice: "12,999",
-    image: "https://images.unsplash.com/photo-1605538883669-825200433431?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     details: {
       flights: "2 Flights",
       hotels: "11 Hotels",
@@ -28,7 +28,7 @@ const earlyBirdOffers = [
     duration: "6N/7D", 
     price: "5,999",
     originalPrice: "12,999",
-    image: "https://images.unsplash.com/photo-1539650116574-75c0c6d73c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     details: {
       flights: "2 Flights",
       hotels: "11 Hotels",
@@ -98,7 +98,7 @@ const EarlyBirdOffers = () => {
                 )}
               </div>
 
-              <CardContent className="p-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+              <CardContent className="p-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white flex flex-col h-full">
                 <div className="mb-4">
                   <h3 className="text-xl font-bold mb-2">{offer.title}</h3>
                   <p className="text-gray-300 text-sm flex items-center gap-1">
