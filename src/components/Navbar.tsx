@@ -105,7 +105,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute top-16 left-0 right-0 bg-card/95 backdrop-blur-md border-b border-glass-border">
+          <div className="lg:hidden absolute top-16 left-0 right-0 bg-white shadow-md">
             <div className="px-4 py-4 space-y-3">
               <a href="#" className="block px-3 py-2 text-card-foreground hover:bg-accent/10 rounded-md">Destination</a>
               <a href="#" className="block px-3 py-2 text-card-foreground hover:bg-accent/10 rounded-md">Explore Extraordinary</a>
