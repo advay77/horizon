@@ -2,6 +2,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { MapPin, Plane, Hotel, User, Calendar, ArrowRight } from "lucide-react";
+import W2 from "@/assets/W2.png";
+import W3 from "@/assets/W3.png";
 
 const earlyBirdOffers = [
   {
@@ -11,7 +13,7 @@ const earlyBirdOffers = [
     duration: "6N/7D",
     price: "5,999",
     originalPrice: "12,999",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    image: W2,
     details: {
       flights: "2 Flights",
       hotels: "11 Hotels",
@@ -28,7 +30,7 @@ const earlyBirdOffers = [
     duration: "6N/7D", 
     price: "5,999",
     originalPrice: "12,999",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    image: W3,
     details: {
       flights: "2 Flights",
       hotels: "11 Hotels",

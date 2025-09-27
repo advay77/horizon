@@ -15,7 +15,7 @@ const HeroSection = () => {
         }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-800/50 via-gray-700/40 to-gray-800/50"></div>
         
         {/* Hero Content */}
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto h-full flex flex-col justify-center">
@@ -25,9 +25,7 @@ const HeroSection = () => {
           <h1 className="text-hero-text font-black text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] leading-[0.9] tracking-[-0.02em] mb-6">
             DISCOVER
           </h1>
-          <p className="text-hero-subtext/90 text-base md:text-lg lg:text-xl max-w-2xl mx-auto font-light leading-relaxed mb-12">
-            Embark on extraordinary journeys and create memories that will last a lifetime with our curated travel experiences.
-          </p>
+          
           
           {/* Booking Tabs - Simplified without glass effect */}
           <div className="w-full max-w-4xl mx-auto">

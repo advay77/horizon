@@ -2,6 +2,9 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge, BadgeProps } from "@/components/ui/badge";
 import { Calendar, MapPin, Users, Plane } from "lucide-react";
+import I1 from "@/assets/I1.png";
+import I2 from "@/assets/I2.png";
+import I3 from "@/assets/I3.png";
 
 const dealCategories = [
   "Deals", "Hotels", "Packages", "Cruise", "Cabs", "Activities", "Community Trips", "Trekking"
@@ -16,7 +19,7 @@ const dealsData = [
     price: "5,999",
     originalPrice: "12,999",
     timeLeft: "32m : 45s",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    image: I1,
     includes: "Includes taxes"
   },
   {
@@ -27,7 +30,7 @@ const dealsData = [
     price: "10,999",
     originalPrice: "12,999",
     timeLeft: "32m : 45s",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    image: I2,
     details: {
       nights: "2 Flights",
       hotels: "11 Hotels", 
@@ -45,7 +48,7 @@ const dealsData = [
     originalPrice: "12,999",
     timeLeft: "32m : 45s",
     date: "16 October 2023",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    image: I3,
     includes: "Includes taxes"
   }
 ];
